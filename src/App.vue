@@ -92,7 +92,7 @@ export default {
             "overflow-y"
           ]
         },
-        { 
+        {
           key: "typography",
           value: [
             "color",
