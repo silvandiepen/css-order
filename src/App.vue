@@ -90,8 +90,11 @@ export default {
             "overflow",
             "overflow-x",
             "overflow-y"
-          ],
-          typography: [
+          ]
+        },
+        { 
+          key: "typography",
+          value: [
             "color",
             "font",
             "font-weight",
