@@ -20,9 +20,13 @@
         </div>
         <div class="switch">
           <div class="input-switch">
-          <label for="logical-rational">Logical</label>
-          <input type="checkbox" id="logical-rational" v-model="isRational"/>
-          <label for="logical-rational">Rational</label>
+            <label for="logical-rational">Logical</label>
+            <input
+              type="checkbox"
+              id="logical-rational"
+              v-model="isRational"
+            />
+            <label for="logical-rational">Rational</label>
           </div>
         </div>
         <div
@@ -50,49 +54,48 @@
           <hr>
           <div class="row">
             <div class="column small-half">
-            <h3>Rational</h3>
-          <hr>
-             <div
-          class="row"
-          v-for="(value, index) in rational"
-          :key="index"
-        >
-          <h5
-            class="quoted"
-            :class="{ 'is-inactive' : value.value.length < 1}"
-          > {{ value.key }}</h5>
-          <ol>
-            <li
-              v-for="(selector, index) in value.value"
-              :key="index"
-            >{{ selector }}</li>
-          </ol>
-        </div>
-             
-             
-             
+
+              <h3>Logical</h3>
+              <hr>
+              <div
+                class="row"
+                v-for="(value, index) in logical"
+                :key="index"
+              >
+                <h5
+                  class="quoted"
+                  :class="{ 'is-inactive' : value.value.length < 1}"
+                > {{ value.key }}</h5>
+                <ol>
+                  <li
+                    v-for="(selector, index) in value.value"
+                    :key="index"
+                  >{{ selector }}</li>
+                </ol>
+              </div>
             </div>
             <div class="column small-half">
+              <h3>Rational</h3>
+              <hr>
+              <div
+                class="row"
+                v-for="(value, index) in rational"
+                :key="index"
+              >
+                <h5
+                  class="quoted"
+                  :class="{ 'is-inactive' : value.value.length < 1}"
+                > {{ value.key }}</h5>
+                <ol>
+                  <li
+                    v-for="(selector, index) in value.value"
+                    :key="index"
+                  >{{ selector }}</li>
+                </ol>
+              </div>
 
-            <h3>Logical</h3>
-          <hr>
-             <div
-          class="row"
-          v-for="(value, index) in logical"
-          :key="index"
-        >
-          <h5
-            class="quoted"
-            :class="{ 'is-inactive' : value.value.length < 1}"
-          > {{ value.key }}</h5>
-          <ol>
-            <li
-              v-for="(selector, index) in value.value"
-              :key="index"
-            >{{ selector }}</li>
-          </ol>
-        </div>
             </div>
+
           </div>
         </div>
       </div>
