@@ -15,7 +15,7 @@
               placeholder="filter"
               v-model="search"
             />
-            <button><span class="silicon-search"></span></button>
+            <button @click="search = ''"><span class="silicon-search"></span></button>
           </div>
         </div>
         <div class="switch">
