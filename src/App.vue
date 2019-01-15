@@ -602,12 +602,6 @@ ol {
   width: 100%;
   display: block;
 }
-code[class*="language"] {
-  background-color: color(Black, 0.85);
-  border: 1px solid color(Black, 1);
-  color: color(White);
-  padding: 1rem;
-}
 
 h4.quoted {
   font-weight: normal;
