@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="content">
+    <div class="container content">
         <h1>Css Order Cheatsheet</h1>
+        <p>To make sure everyone uses the same order in CSS, we've created a logical order which everyone agreed with.</p>
+        <p>All properties are separated by type and grouped by related properties.</p>
+        <p>There is also a stylelint plugin to enforce this order and give errors when the erros arent set. <a href="#stylelint">Read more about this</a>.</p>
+    </div>
+    <section class="background--blue">
+      <div class="container">
         <div class="search">
           <div class="input-search">
             <input
@@ -13,7 +18,7 @@
             <button @click="search = ''"><span class="silicon-search"></span></button>
           </div>
         </div>
-        <div class="switch">
+        <!-- <div class="switch">
           <div class="input-switch">
             <label for="logical-rational">Logical</label>
             <input
@@ -23,7 +28,11 @@
             />
             <label for="logical-rational">Rational</label>
           </div>
+        </div> -->
         </div>
+      </section>
+      <section class="background--white">
+        <div class="container content">
         <div
           class="row"
           v-for="(value, index) in filteredCSS"
@@ -41,8 +50,66 @@
           </ol>
         </div>
       </div>
-    </div>
-    <section class="background--dark">
+      </section>
+      <section class="background--yellow" id="stylelint">
+        <div class="container content">
+          <vue-markdown>
+### Stylelint
+
+```bash
+npm install stylelint stylelint-order stylelint-logical-order
+```
+
+Add the settings to your package.json 
+```json
+{ "stylelint": {
+    "rules": {
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        "declarations",
+        "rules"
+      ],
+    },
+    "extends": [
+      "stylelint-logical-order"
+    ]
+  }
+}
+```
+
+**OR** create a `.stylelintrc` file
+
+```json
+{
+	"plugins": ["stylelint-order"],
+	"rules": {
+		"order/order": [
+			"custom-properties",
+			"dollar-variables",
+			"declarations",
+			"rules"
+		],
+	},
+	"extends": [
+    "stylelint-logical-order"
+  ]
+}
+```
+
+And add stylelint to your scripts:
+```json
+{
+  "scripts": {
+		"stylelint": "stylelint 'src/scss/**/*.scss'",
+		"stylelint:fix": "stylelint 'src/scss/**/*.scss' --fix"
+  }
+}      
+```     
+          </vue-markdown>         
+        </div>
+      </section>
+    <!-- <section class="background--dark">
       <div class="container compare">
         <div class="content">
           <h1>side-by-side</h1>
@@ -94,16 +161,18 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <sil-footer></sil-footer>
   </div>
 </template>
 
 <script>
-import silFooter from './components/footer.vue';
+import vueMarkdown from "vue-markdown";
+import silFooter from "./components/footer.vue";
 export default {
   name: "app",
   components: {
+    vueMarkdown,
     silFooter
   },
   data() {
@@ -771,11 +840,11 @@ export default {
   },
   computed: {
     filteredCSS: function() {
-      if (this.isRational) {
-        return this.filterCSS(this.rational);
-      } else {
-        return this.filterCSS(this.logical);
-      }
+      // if (this.isRational) {
+      //   return this.filterCSS(this.rational);
+      // } else {
+      return this.filterCSS(this.logical);
+      // }
     }
   },
   methods: {
@@ -817,6 +886,12 @@ li {
 ol {
   width: 100%;
   display: block;
+}
+code[class*="language"] {
+  background-color: color(Black, 0.85);
+  border: 1px solid color(Black, 1);
+  color: color(White);
+  padding: 1rem;
 }
 
 h4.quoted {
