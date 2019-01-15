@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://raw.githubusercontent.com/silvandiepen/base-style/master/dist/app.css"
-    />
     <div class="container">
       <div class="content">
         <h1>Css Order Cheatsheet</h1>
@@ -100,12 +95,17 @@
         </div>
       </div>
     </section>
+    <sil-footer></sil-footer>
   </div>
 </template>
 
 <script>
+import silFooter from './components/footer.vue';
 export default {
   name: "app",
+  components: {
+    silFooter
+  },
   data() {
     return {
       search: "",
@@ -812,7 +812,7 @@ export default {
 @import "~@sil/base-style/src/scss/index.full";
 
 li {
-  font-family: $system-fonts-mono;
+  font-family: $system-fonts;
 }
 ol {
   width: 100%;
