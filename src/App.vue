@@ -447,7 +447,6 @@ export default {
             "overflow-y",
             "overflow-wrap",
             "visibility",
-            "opacity",
             "filter",
             "backdrop-filter",
             "appearance",
@@ -462,7 +461,9 @@ export default {
             "mask-position",
             "mask-repeat",
             "mask-size",
-            "mask-type"
+            "mask-type",
+            "mix-blend-mode",
+            "opacity"
           ]
         },
         {
