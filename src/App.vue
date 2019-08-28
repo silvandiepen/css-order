@@ -65,7 +65,24 @@ npm install stylelint stylelint-order stylelint-logical-order
 Add the settings to your package.json 
 ```json
 { "stylelint": {
-    "rules": {
+    "rules": {		
+    	"at-rule-no-unknown": [
+		true,
+		{
+			"ignoreAtRules": [
+				"if",
+				"for",
+				"else",
+				"each",
+				"mixin",
+				"extend",
+				"include",
+				"content",
+				"at-root",
+				"function"
+			]
+		}
+	],
       "order/order": [
         "custom-properties",
         "dollar-variables",
@@ -85,7 +102,24 @@ Add the settings to your package.json
 ```json
 {
 	"plugins": ["stylelint-order"],
-	"rules": {
+	"rules": {	
+		"at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": [
+					"if",
+					"for",
+					"else",
+					"each",
+					"mixin",
+					"extend",
+					"include",
+					"content",
+					"at-root",
+					"function"
+				]
+			}
+		],
 		"order/order": [
 			"custom-properties",
 			"dollar-variables",
