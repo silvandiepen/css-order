@@ -15,12 +15,12 @@ export default {
 
 <style lang="scss">
 pre {
-    background-color: color(_YellowLight);
-    color: color(_Black);
-    code {
-        display: block;
-        line-height: 1.5;
-        padding: 1rem;
-    }
+	background-color: color(_YellowLight);
+	color: color(_Black);
+	code {
+		display: block;
+		line-height: 1.5;
+		padding: 1rem;
+	}
 }
 </style>

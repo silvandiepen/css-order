@@ -50,9 +50,8 @@ export default {
             },
         },
         filteredCSS() {
-            // console.log(this.order)
-            // return this.order.order
-            return this.filterCSS(this.order.order)
+            if (this.search) return this.filterCSS(this.order.order)
+            else return this.order.order
         },
     },
     methods: {
@@ -93,49 +92,49 @@ export default {
 
 <style lang="scss">
 body {
-    counter-reset: selectors;
+	counter-reset: selectors;
 }
 .selectors {
-    display: flex;
-    flex-direction: row;
-    color: white;
-    transition: opacity $base-transition;
-    &--searching {
-        opacity: 0.25;
-        &.selectors--has-properties {
-            opacity: 1;
-        }
-    }
+	display: flex;
+	flex-direction: row;
+	color: white;
+	transition: opacity $base-transition;
+	&--searching {
+		opacity: 0.25;
+		&.selectors--has-properties {
+			opacity: 1;
+		}
+	}
 
-    &__overview {
-        padding: 2rem;
-        background-color: color(Plum);
-    }
-    &__title {
-        display: block;
-        width: grid(5);
-        font-size: 0.8rem;
-        line-height: 1rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin: 0;
-        padding: 0.5em;
-    }
-    &__list {
-        padding: 0;
-        margin: 0;
-    }
-    &__item {
-        display: block;
-        line-height: 1rem;
-        counter-increment: selectors;
-        padding: 0.5em;
-        &::before {
-            content: counter(selectors);
-            display: inline-block;
-            width: 2rem;
-            opacity: 0.25;
-        }
-    }
+	&__overview {
+		padding: 2rem;
+		background-color: color(Plum);
+	}
+	&__title {
+		display: block;
+		width: grid(5);
+		font-size: 0.8rem;
+		line-height: 1rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0.5em;
+	}
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
+	&__item {
+		display: block;
+		line-height: 1rem;
+		counter-increment: selectors;
+		padding: 0.5em;
+		&::before {
+			content: counter(selectors);
+			display: inline-block;
+			width: 2rem;
+			opacity: 0.25;
+		}
+	}
 }
 </style>
