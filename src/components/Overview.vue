@@ -58,7 +58,7 @@ export default {
     methods: {
         filterCSS(values) {
             const newValues = values.map(props => {
-                if (this.search.indexOf('+') > -1) {
+                if (this.search.includes('+')) {
                     let terms = this.search.replace(' ', '').split('+')
                     props.value = props.value.filter(function(item) {
                         for (var key in terms) {
@@ -79,8 +79,8 @@ export default {
                 } else {
                     return {
                         key: props.key,
-                        value: props.value.filter(
-                            val => val.indexOf(this.search) > -1
+                        value: props.value.filter(val =>
+                            val.includes(this.search)
                         ),
                     }
                 }
@@ -93,49 +93,49 @@ export default {
 
 <style lang="scss">
 body {
-	counter-reset: selectors;
+    counter-reset: selectors;
 }
 .selectors {
-	display: flex;
-	flex-direction: row;
-	color: white;
-	transition: opacity $base-transition;
-	&--searching {
-		opacity: 0.25;
-		&.selectors--has-properties {
-			opacity: 1;
-		}
-	}
+    display: flex;
+    flex-direction: row;
+    color: white;
+    transition: opacity $base-transition;
+    &--searching {
+        opacity: 0.25;
+        &.selectors--has-properties {
+            opacity: 1;
+        }
+    }
 
-	&__overview {
-		padding: 2rem;
-		background-color: color(Plum);
-	}
-	&__title {
-		display: block;
-		width: grid(5);
-		font-size: 0.8rem;
-		line-height: 1rem;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		margin: 0;
-		padding: 0.5em;
-	}
-	&__list {
-		padding: 0;
-		margin: 0;
-	}
-	&__item {
-		display: block;
-		line-height: 1rem;
-		counter-increment: selectors;
-		padding: 0.5em;
-		&::before {
-			content: counter(selectors);
-			display: inline-block;
-			width: 2rem;
-			opacity: 0.25;
-		}
-	}
+    &__overview {
+        padding: 2rem;
+        background-color: color(Plum);
+    }
+    &__title {
+        display: block;
+        width: grid(5);
+        font-size: 0.8rem;
+        line-height: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0.5em;
+    }
+    &__list {
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        display: block;
+        line-height: 1rem;
+        counter-increment: selectors;
+        padding: 0.5em;
+        &::before {
+            content: counter(selectors);
+            display: inline-block;
+            width: 2rem;
+            opacity: 0.25;
+        }
+    }
 }
 </style>
