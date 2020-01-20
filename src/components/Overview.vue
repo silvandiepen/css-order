@@ -4,10 +4,10 @@
             class="selectors"
             :class="[
                 {
-                    'selectors--searching': search.length > 0,
+                    'selectors--searching': search,
                 },
                 {
-                    'selectors--has-properties': value.value.length > 0,
+                    'selectors--has-properties': value && value.value,
                 },
             ]"
             v-for="(value, index) in filteredCSS"
@@ -15,11 +15,11 @@
         >
             <h4
                 class="selectors__title"
-                :class="{ 'is-inactive': value.value.length < 1 }"
+                :class="{ 'is-inactive': value && value.value }"
             >
                 {{ value.key }}
             </h4>
-            <ol class="selectors__list">
+            <ol class="selectors__list" v-if="value && value.value">
                 <li
                     class="selectors__item"
                     v-for="(selector, index) in value.value"
