@@ -1,0 +1,36 @@
+// li {
+// 	font-family: $system-fonts;
+// }
+// ol {
+// 	width: 100%;
+// 	display: block;
+// }
+
+// h4.quoted {
+// 	font-weight: normal;
+// 	font-family: $system-fonts-mono;
+// 	transition: all 0.3s;
+// 	color: color(Black);
+// 	&:before,
+// 	&:after {
+// 		display: inline-block;
+// 		max-width: 0;
+// 		transition: all 0.3s;
+// 		opacity: 0;
+// 	}
+// 	&:before {
+// 		content: "/* ";
+// 	}
+// 	&:after {
+// 		content: "  */";
+// 	}
+// 	&.is-inactive {
+// 		color: color(Black, 0.25);
+// 		&:before,
+// 		&:after {
+// 			transition: all 0.3s;
+// 			max-width: 50px;
+// 			opacity: 1;
+// 		}
+// 	}
+// }
