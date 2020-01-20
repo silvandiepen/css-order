@@ -21,8 +21,8 @@
 
 <style lang="scss">
 .content {
-	a:not([class]) {
-		color: color(SkyBlue);
-	}
+    a:not([class]) {
+        color: color(Skyblue);
+    }
 }
 </style>
