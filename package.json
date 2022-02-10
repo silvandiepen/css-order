@@ -40,7 +40,7 @@
         "guyn": "0.0.13",
         "henris": "^1.2.18",
         "html-loader": "^0.5.5",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "sass-loader": "^8.0.2",
         "stylelint": "^13.0.0",
         "stylelint-logical-order": "0.0.6",
